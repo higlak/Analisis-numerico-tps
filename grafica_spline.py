@@ -22,6 +22,7 @@ def graficar_por_spline(vector_puntos_dominio, vector_puntos_imagen):
     plt.xlabel('Posicion')
     plt.ylabel('Culo')
     plt.xlim(1,30)
+    plt.ylim(-1,15)
     plt.show()
     
 

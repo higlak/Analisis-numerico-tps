@@ -73,7 +73,7 @@ def coeficientes_de_splines(cant_nodos, nodo, func, derivada_0, derivada_n):
 	vector_a = func[:]
 	vector_d = []
 	for i in range(cant_nodos - 1):
-		vector_d.append(( vector_c[i + 1] - vector_c[i] ) / 3 * h[i])
+		vector_d.append(( vector_c[i + 1] - vector_c[i] ) / (3 * h[i]))
 	vector_b = []
 	for i in range(cant_nodos - 1):
 		vector_b.append( ( vector_a[i + 1] - vector_a[i] ) / h[i] - h[i] * ( 2 * vector_c[i] + vector_c[i + 1] ) / 3 )
