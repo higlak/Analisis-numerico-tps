@@ -94,7 +94,7 @@ def crear_splines(vector_dominio, vector_imagen, derivada_0, derivada_n):
 #print(np.linalg.solve(a, b))
 #print(spline(4, [1,2,3,4], [2,4,6,8], 2, 2))
 #print(spline(4, [27.7, 28, 29, 30], [4.1, 4.3, 4.1, 3], 1/3, -3/2))
-print(spline(4, [-1, 0, 1, 2], [0, -3, 2, 21], -5, 28))
+
 
 
 

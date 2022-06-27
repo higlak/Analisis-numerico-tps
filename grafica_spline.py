@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from prueba import *
+from pseudo_spline import *
 
 def elegir_spline(vector_splines, x):
     for spline in vector_splines:
