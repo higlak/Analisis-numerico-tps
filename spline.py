@@ -1,5 +1,6 @@
 import numpy as np
-e = 2.7182
+import LU
+
 
 class Spline:
 
@@ -57,7 +58,8 @@ def spline_matricial(cant_nodos, nodo, func, derivada_0, derivada_n):
 		A[i][i] = 2 * ( h[i - 1] + h[i] )
 		A[i][i + 1] = h[i]
 
-	return np.linalg.solve(A, b), h
+	return LU.resolver_por_LU(A, b), h
+	#return np.linalg.solve(A, b), h
 		
 def armar_matriz_nula(n):
 	A = []

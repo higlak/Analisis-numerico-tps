@@ -20,11 +20,11 @@ def _biseccion(a, b, iteraciones, tolerancia, lista_iteraciones):
     lista_iteraciones.append(p)
     print(f'{iteraciones}_) a: {a}, b: {b}, p: {p}, f(p): {g_p}')
 
-    if abs(g_p) < tolerancia or g_p == 0 or (b - p) < tolerancia:
+    if g_p == 0 or (b - p) < tolerancia:
         print(f"La raíz aproximada con un error menor a {tolerancia} es {p} y se consiguio despues de {iteraciones + 1} iteraciones.")
         return lista_iteraciones
 
-    if g_p * g(a) == abs(g_p * g(a)):
+    if g_p * g(a) == abs(g_p * g(a)):   
         return _biseccion(p, b, iteraciones + 1, tolerancia, lista_iteraciones)
     return _biseccion(a, p, iteraciones + 1, tolerancia, lista_iteraciones)
 
@@ -40,7 +40,7 @@ def prueba_existencia_de_punto_fijo(limite_inf, limite_sup, g):
 
 def prueba_unicidad_de_punto_fijo(limite_inf, limite_sup, gPrima):
 	if(gPrima(limite_inf) <= gPrima(limite_sup)):
-		if(gPrima(limite_sup) < 1 and gPrima(limite_inf) > -1):
+		if gPrima(limite_sup) < 1 and gPrima(limite_inf) > -1:
 			return True
 	print("No pude probar la unicidad del punto fijo \n")
 	return False
@@ -138,8 +138,10 @@ def calculo_de_constante_asintotica(iteraciones, alfa):
             constantes_asintoticas.append(constante)
     return constantes_asintoticas
 
-for cst in calculo_de_constante_asintotica(newton_raphson(1100, 1e-13), 2):
+for cst in calculo_de_constante_asintotica(punto_fijo(1100, 1e-10), 2):
     print(cst) 
 
-for orden in orden_de_convergencia(newton_raphson(1100, 1e-13)):
+for orden in orden_de_convergencia(punto_fijo(1100, 1e-10)):
     print(orden) 
+
+biseccion(1000, 1200, 1e-11)

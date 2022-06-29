@@ -33,13 +33,13 @@ def graficar_por_spline(vector_puntos_dominio, vector_puntos_imagen):
     """
     plt.grid()
     plt.plot(vector_puntos_dominio,vector_puntos_imagen)
-    plt.title('')
+    plt.title('Grafico de Spline')
     plt.xlabel('')
     plt.ylabel('')
     plt.xlim(1,30)
     plt.ylim(-1,18)
     plt.show()
-    
+    plt.savefig('spline.png')
 
 def main():
     """
